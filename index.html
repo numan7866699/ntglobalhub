@@ -3,88 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NT Global Hub | Premium B2B Digital Assets & Global Trade</title>
+    <title>NT Global Hub | Premium B2B Digital Assets</title>
     <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #0284c7;
-            --accent: #f59e0b;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --card-border: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
-        header { background-color: var(--primary); color: var(--white); padding: 20px 5%; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 24px; font-weight: 700; }
-        .logo span { color: var(--secondary); }
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav ul li a { color: #cbd5e1; text-decoration: none; font-weight: 500; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); padding: 80px 5%; text-align: center; }
-        .ad-placeholder { max-width: 1200px; margin: 30px auto; background: #e2e8f0; border: 2px dashed #cbd5e1; border-radius: 8px; padding: 15px; text-align: center; font-size: 11px; color: #94a3b8; text-transform: uppercase; }
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .product-card { background-color: var(--white); border: 1px solid var(--card-border); border-radius: 10px; padding: 25px; display: flex; flex-direction: column; }
-        .product-tag { background-color: #e0f2fe; color: var(--secondary); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; align-self: flex-start; margin-bottom: 15px; }
-        .product-card h3 { font-size: 19px; color: var(--primary); margin-bottom: 10px; }
-        .product-card p { font-size: 14px; color: var(--text-main); margin-bottom: 20px; flex-grow: 1; }
-        .product-footer { margin-top: 15px; padding-top: 15px; border-top: 1px solid #f1f5f9; }
-        .btn-buy { background-color: var(--secondary); color: var(--white); text-decoration: none; padding: 10px 18px; display: block; border-radius: 5px; text-align: center; font-weight: 600; margin-top: 10px; }
-        .policy-section { background-color: var(--white); border: 1px solid var(--card-border); border-radius: 10px; padding: 40px; margin-bottom: 40px; }
-        .corp-footer-box { background-color: var(--primary); color: var(--white); padding: 40px; border-radius: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        :root { --primary: #0f172a; --secondary: #0284c7; --white: #ffffff; --text: #334155; }
+        body { font-family: sans-serif; background: #f8fafc; color: var(--text); margin: 0; }
+        header { background: var(--primary); color: var(--white); padding: 20px; position: sticky; top: 0; }
+        .nav-container { display: flex; justify-content: space-between; max-width: 1000px; margin: auto; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { color: #cbd5e1; text-decoration: none; font-weight: bold; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        .policy-content { display: none; background: white; padding: 20px; border: 1px solid #ddd; }
+        .policy-content.active { display: block; }
+        .tab-btn { padding: 10px; cursor: pointer; }
+        .active-tab { border-bottom: 2px solid var(--secondary); }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">NT GLOBAL<span> HUB</span></div>
-            <nav><ul><li><a href="#store">Digital Store</a></li><li><a href="#policies">Legal Policies</a></li><li><a href="#corporate">Corporate Info</a></li></ul></nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h1>Empowering Global Enterprise Through Digital Excellence</h1>
-        <p>Institutional-grade business toolkits, international trade documentation frameworks, and analytical digital tools engineered for global entrepreneurs.</p>
-    </section>
-
-    <div class="container">
-        <section id="store">
-            <div class="products-grid">
-                <div class="product-card">
-                    <span class="product-tag">B2B Trade Frameworks</span>
-                    <h3>Digital Infrastructure & Operations Kit</h3>
-                    <p>Complete set of professional, customisable corporate templates including Commercial Invoices, Proforma Formats, and standard B2B Sales Contracts.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Pricing: Variable / Custom Invoice</div>
-                        <a href="#" class="btn-buy">Pay Custom Invoice</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <span class="product-tag">Corporate Communication</span>
-                    <h3>International Client Outreach Kit</h3>
-                    <p>A premium repository of 25+ professional English email outreach frameworks, business proposals, and negotiation scripts.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Pricing: Variable / Custom Invoice</div>
-                        <a href="#" class="btn-buy">Pay Custom Invoice</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <span class="product-tag">Financial Tools</span>
-                    <h3>Advanced Financial Analytics Ledger</h3>
-                    <p>An institutional-grade spreadsheet model engineered for dynamic market analysis, portfolio tracking, and automated risk parameters.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Pricing: Variable / Custom Invoice</div>
-                        <a href="#" class="btn-buy">Pay Custom Invoice</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<header>
+    <div class="nav-container">
+        <div class="logo">NT GLOBAL HUB</div>
+        <nav>
+            <ul>
+                <li><a href="#store">Digital Store</a></li>
+                <li><a href="#policies">Legal Policies</a></li>
+                <li><a href="#corporate">Corporate Info</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
+
+<div class="container" id="store">
+    <h1>Digital Store</h1>
+    <p>Yahan aapke products ki details hain...</p>
+</div>
+
+<div class="container" id="policies">
+    <h2>Legal Policies</h2>
+    <button class="tab-btn" onclick="showPolicy('privacy')">Privacy Policy</button>
+    <button class="tab-btn" onclick="showPolicy('terms')">Terms of Service</button>
+    
+    <div id="privacy" class="policy-content"><h3>Privacy Policy</h3><p>Data protection details...</p></div>
+    <div id="terms" class="policy-content"><h3>Terms of Service</h3><p>Usage terms...</p></div>
+</div>
+
+<div class="container" id="corporate">
+    <h2>Corporate Info</h2>
+    <p><strong>Founder:</strong> Muhammad Numan</p>
+    <p><strong>Address:</strong> Industrial Corridor, Faisalabad, Pakistan.</p>
+</div>
+
+<script>
+    function showPolicy(id) {
+        document.querySelectorAll('.policy-content').forEach(el => el.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
