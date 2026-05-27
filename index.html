@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NT Global Hub | Premium Business Digital Assets</title>
     
-    <script src="https://cdn.paddle.com/paddle/v4/paddle.js"></script>
+        <script>
+        // Paddle library ko automatically load aur initialize karne ka script
+        (function(w, d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://cdn.paddle.com/paddle/v4/paddle.js";
+            js.onload = function() {
+                if (typeof Paddle !== 'undefined') {
+                    Paddle.Initialize({ token: 'live_ed3bf93ce6e076816f86f4c2f02' });
+                    console.log("Paddle Initialized Successfully");
+                }
+            };
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'paddle-js'));
 
-    <script>
-        window.addEventListener('load', () => {
-            if (typeof Paddle !== 'undefined') {
-                Paddle.Initialize({ 
-                    token: 'live_ed3bf93ce6e076816f86f4c2f02' 
-                });
-                console.log("Paddle Initialized");
-            }
-        });
-
+        // Jab user button dabaye, tab check karein
         function openCheckout(priceId) {
             if (typeof Paddle !== 'undefined') {
                 Paddle.Checkout.open({
@@ -24,10 +29,11 @@
                     items: [{ priceId: priceId, quantity: 1 }]
                 });
             } else {
-                alert("Payment gateway loading... please wait a second.");
+                alert("Payment gateway is loading... please wait 3 seconds and try again.");
             }
         }
     </script>
+
 </head>
 <body>
 
