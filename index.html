@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NT Global Hub | Premium Business Digital Assets & Frameworks</title>
+    
+    <script src="https://cdn.paddle.com/paddle/v3/paddle.js"></script>
+    <script>
+        Paddle.initialize({ 
+            token: 'Live_449904cb8035a1ccb2875988a16' 
+        });
+    </script>
+
     <style>
         :root {
             --primary: #0f172a;
@@ -196,6 +204,7 @@
             border-radius: 5px;
             text-align: center;
             transition: background 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-buy:hover {
@@ -328,8 +337,8 @@
                     <h3>Digital Infrastructure & Operations Kit</h3>
                     <p>Complete set of professional, customizable corporate templates including Commercial Invoices, Proforma Formats, Packing Lists, and standard B2B Sales Contracts drafted for international customs compliance.</p>
                     <div class="product-footer">
-                        <div class="product-price">Pricing: $49.00 / One-time</div>
-                        <a href="#" class="btn-buy">Purchase Toolkit</a>
+                        <div class="product-price">Pricing: $50.00 / One-time</div>
+                        <a href="javascript:void(0)" class="btn-buy" onclick="openCheckout('pri_01ksmjvxcfxha6v8avt5f47ppt')">Purchase Toolkit</a>
                     </div>
                 </div>
 
@@ -338,8 +347,8 @@
                     <h3>International Client Outreach Kit</h3>
                     <p>A premium repository of 25+ professional English email outreach frameworks, business proposals, and negotiation scripts optimized for international market acquisition and closing high-value global trade deals.</p>
                     <div class="product-footer">
-                        <div class="product-price">Pricing: $39.00 / One-time</div>
-                        <a href="#" class="btn-buy">Purchase Toolkit</a>
+                        <div class="product-price">Pricing: $100.00 / One-time</div>
+                        <a href="javascript:void(0)" class="btn-buy" onclick="openCheckout('pri_01ksmkqkjsxg3e21wmp27zypya')">Purchase Toolkit</a>
                     </div>
                 </div>
 
@@ -348,8 +357,8 @@
                     <h3>Advanced Business Analytics & Expense Ledger</h3>
                     <p>An institutional-grade spreadsheet model engineered for dynamic business expense tracking, financial trend analysis, corporate budgeting, and cash-flow organization.</p>
                     <div class="product-footer">
-                        <div class="product-price">Pricing: $59.00 / One-time</div>
-                        <a href="#" class="btn-buy">Purchase Toolkit</a>
+                        <div class="product-price">Pricing: $200.00 / One-time</div>
+                        <a href="javascript:void(0)" class="btn-buy" onclick="openCheckout('pri_01ksmksc7n31yhc7hz7tnjpw1a')">Purchase Toolkit</a>
                     </div>
                 </div>
             </div>
@@ -406,6 +415,22 @@
     </footer>
 
     <script>
+        function openCheckout(selectedPriceId) {
+            Paddle.Checkout.open({
+                settings: {
+                    displayMode: "overlay",
+                    theme: "light",
+                    locale: "en"
+                },
+                items: [
+                    {
+                        priceId: selectedPriceId,
+                        quantity: 1
+                    }
+                ]
+            });
+        }
+
         function switchTab(evt, tabId) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("policy-content");
