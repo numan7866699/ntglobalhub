@@ -7,10 +7,9 @@
     
     <script src="https://cdn.paddle.com/paddle/v3/paddle.js"></script>
     <script>
-        // Yahan apni REAL Vendor ID aur Client Token lagayein jo Paddle Dashboard se milegi
-        Paddle.Setup({ 
-            vendor: 123456, 
-            token: 'pt_live_xxxxxxxxxxxxxxxxxxxxxxxxx' 
+        // Aapki Real Client Token Yahan Successfully Inject Ho Gayi Hai
+        Paddle.Initialize({ 
+            token: 'Live_449904cb8035a1ccb2875988a16' 
         });
     </script>
 
@@ -22,7 +21,7 @@
         
         .grid-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .tier-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: relative; transition: transform 0.2s; }
-        .tier-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
+        .tier-card:hover { transform: translateY(-5px); border-color: #2563eb; }
         
         .number-badge { position: absolute; top: 15px; left: 15px; background: #e2e8f0; color: #334155; font-weight: bold; font-size: 12px; padding: 3px 8px; border-radius: 20px; }
         .tier-title { font-size: 18px; font-weight: 600; margin-top: 15px; color: #334155; }
@@ -47,42 +46,42 @@
             <span class="number-badge">No. 01</span>
             <div class="tier-title">Micro Asset Pack</div>
             <div class="tier-price">$50</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h50_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_50_yahan_dalein')">Execute Payment</button>
         </div>
 
         <div class="tier-card">
             <span class="number-badge">No. 02</span>
             <div class="tier-title">Standard Business Kit</div>
             <div class="tier-price">$100</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h100_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_100_yahan_dalein')">Execute Payment</button>
         </div>
 
         <div class="tier-card">
             <span class="number-badge">No. 03</span>
             <div class="tier-title">Premium Framework</div>
             <div class="tier-price">$200</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h200_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_200_yahan_dalein')">Execute Payment</button>
         </div>
 
         <div class="tier-card">
             <span class="number-badge">No. 04</span>
             <div class="tier-title">Corporate Solution</div>
             <div class="tier-price">$300</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h300_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_300_yahan_dalein')">Execute Payment</button>
         </div>
 
         <div class="tier-card">
             <span class="number-badge">No. 05</span>
             <div class="tier-title">Enterprise System</div>
             <div class="tier-price">$400</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h400_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_400_yahan_dalein')">Execute Payment</button>
         </div>
 
         <div class="tier-card">
             <span class="number-badge">No. 06</span>
             <div class="tier-title">Custom Elite Package</div>
             <div class="tier-price">$500</div>
-            <button class="pay-btn" onclick="openCheckout('pri_01h500_real_id_yahan_dalein')">Execute Payment</button>
+            <button class="pay-btn" onclick="openCheckout('pri_500_yahan_dalein')">Execute Payment</button>
         </div>
 
     </div>
@@ -92,18 +91,18 @@
     </div>
 
     <script>
+        // Core V3 Checkout Open Function
         function openCheckout(selectedPriceId) {
             Paddle.Checkout.open({
                 settings: {
                     displayMode: "overlay",
                     theme: "light",
-                    locale: "en",
-                    allowFullCheckoutDiscount: true
+                    locale: "en"
                 },
                 items: [
                     {
                         priceId: selectedPriceId,
-                        quantity: 1 // Client checkout screen par ja kar is quantity ko barha bhi sakta hai
+                        quantity: 1
                     }
                 ]
             });
