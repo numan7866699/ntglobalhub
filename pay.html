@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Billing Portal - NT Global Hub</title>
+    
+    <script src="https://cdn.paddle.com/paddle/v3/paddle.js"></script>
+    <script>
+        // Yahan apni REAL Vendor ID aur Client Token lagayein jo Paddle Dashboard se milegi
+        Paddle.Setup({ 
+            vendor: 123456, 
+            token: 'pt_live_xxxxxxxxxxxxxxxxxxxxxxxxx' 
+        });
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 40px 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { margin: 0; color: #1e3a8a; font-size: 28px; }
+        .header p { color: #64748b; margin-top: 5px; }
+        
+        .grid-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .tier-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: relative; transition: transform 0.2s; }
+        .tier-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
+        
+        .number-badge { position: absolute; top: 15px; left: 15px; background: #e2e8f0; color: #334155; font-weight: bold; font-size: 12px; padding: 3px 8px; border-radius: 20px; }
+        .tier-title { font-size: 18px; font-weight: 600; margin-top: 15px; color: #334155; }
+        .tier-price { font-size: 36px; font-weight: 800; color: #2563eb; margin: 15px 0; }
+        
+        .pay-btn { background: #2563eb; color: white; border: none; width: 100%; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        .pay-btn:hover { background: #1d4ed8; }
+        
+        .footer-note { text-align: center; margin-top: 40px; color: #64748b; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Secure Project Billing Portal</h1>
+        <p>Select the assigned reference number below to complete your secure checkout.</p>
+    </div>
+
+    <div class="grid-container">
+
+        <div class="tier-card">
+            <span class="number-badge">No. 01</span>
+            <div class="tier-title">Micro Asset Pack</div>
+            <div class="tier-price">$50</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h50_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+        <div class="tier-card">
+            <span class="number-badge">No. 02</span>
+            <div class="tier-title">Standard Business Kit</div>
+            <div class="tier-price">$100</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h100_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+        <div class="tier-card">
+            <span class="number-badge">No. 03</span>
+            <div class="tier-title">Premium Framework</div>
+            <div class="tier-price">$200</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h200_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+        <div class="tier-card">
+            <span class="number-badge">No. 04</span>
+            <div class="tier-title">Corporate Solution</div>
+            <div class="tier-price">$300</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h300_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+        <div class="tier-card">
+            <span class="number-badge">No. 05</span>
+            <div class="tier-title">Enterprise System</div>
+            <div class="tier-price">$400</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h400_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+        <div class="tier-card">
+            <span class="number-badge">No. 06</span>
+            <div class="tier-title">Custom Elite Package</div>
+            <div class="tier-price">$500</div>
+            <button class="pay-btn" onclick="openCheckout('pri_01h500_real_id_yahan_dalein')">Execute Payment</button>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        <p>All transactions are securely encrypted and handled via Paddle Merchant of Record.</p>
+    </div>
+
+    <script>
+        function openCheckout(selectedPriceId) {
+            Paddle.Checkout.open({
+                settings: {
+                    displayMode: "overlay",
+                    theme: "light",
+                    locale: "en",
+                    allowFullCheckoutDiscount: true
+                },
+                items: [
+                    {
+                        priceId: selectedPriceId,
+                        quantity: 1 // Client checkout screen par ja kar is quantity ko barha bhi sakta hai
+                    }
+                ]
+            });
+        }
+    </script>
+
+</body>
+</html>
