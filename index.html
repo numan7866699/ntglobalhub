@@ -6,39 +6,31 @@
     <title>NT Global Hub | Premium Business Digital Assets</title>
     
         <script>
-    (function(w, d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://cdn.paddle.com/paddle/v4/paddle.js";
-        
-        js.onload = function() {
-            console.log("SUCCESS: Paddle library loaded.");
-            if (typeof Paddle !== 'undefined') {
-                Paddle.Initialize({ token: 'live_ed3bf93ce6e076816f86f4c2f02' });
-            }
-        };
+    // Global variable to check status
+    window.paddleLoaded = false;
 
-        js.onerror = function() {
-            console.error("CRITICAL ERROR: Failed to load Paddle script. Check your internet/network restrictions.");
-            alert("Payment gateway failed to load (Check console for error).");
-        };
-
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'paddle-js'));
+    // Initialize Paddle
+    Paddle.Initialize({ 
+        token: 'live_ed3bf93ce6e076816f86f4c2f02' 
+    });
+    
+    // Set a flag when ready
+    window.paddleLoaded = true;
+    console.log("Paddle library initialized!");
 
     function openCheckout(priceId) {
-        if (typeof Paddle !== 'undefined') {
+        if (window.paddleLoaded) {
             Paddle.Checkout.open({
                 settings: { displayMode: "overlay", theme: "light" },
                 items: [{ priceId: priceId, quantity: 1 }]
             });
         } else {
-            console.error("Paddle is still undefined. Check console.");
-            alert("Paddle is not initialized. Please check Eruda console for errors.");
+            alert("Still loading... please wait a few seconds and try again.");
+            console.error("Paddle is not loaded yet.");
         }
     }
 </script>
+
 
 
 </head>
