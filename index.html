@@ -7,11 +7,12 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
         header { background: #f4f4f4; padding: 20px; text-align: center; }
-        section { padding: 40px 20px; max-width: 800px; margin: auto; }
-        .hero { text-align: center; background: #fff; border: 1px solid #ddd; padding: 40px; }
+        section { padding: 40px 20px; max-width: 800px; margin: auto; border-bottom: 1px solid #eee; }
+        .hero { text-align: center; background: #fff; padding: 40px; }
         button { padding: 15px 30px; font-size: 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-        .footer-links a { color: white; margin: 0 10px; text-decoration: none; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; }
+        h2, h3 { color: #007bff; }
     </style>
     <!-- Proxy Script -->
     <script src="https://small-disk-e02c.ntstudio00.workers.dev/paddle-script" defer></script>
@@ -28,27 +29,44 @@
         <button onclick="openCheckout('pri_01ksmjvxcfxha6v8avt5f47ppt')">Buy Now ($50)</button>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h3>About Us</h3>
-        <p>NT Global Hub is a professional digital agency specializing in international financial infrastructure and mentorship. We provide streamlined solutions for global traders and businesses.</p>
+        <p>NT Global Hub is a professional digital agency specializing in international financial infrastructure and trading mentorship. We provide streamlined, secure, and compliant solutions for global traders and businesses.</p>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h3>Contact Us</h3>
         <p>For support or business inquiries, reach out to us at: <strong>info@ntglobalhub.com</strong></p>
     </section>
 
+    <!-- Policies Sections -->
+    <section id="privacy">
+        <h3>Privacy Policy</h3>
+        <p>At NT Global Hub, we value your privacy. We collect only necessary information to process payments securely through our partners. We do not sell or share your personal data with third parties.</p>
+    </section>
+
+    <section id="terms">
+        <h3>Terms of Service</h3>
+        <p>By using our services, you agree to comply with our guidelines. All digital services provided are for educational and professional use. Users are responsible for their own trading decisions and financial activities.</p>
+    </section>
+
+    <section id="refund">
+        <h3>Refund Policy</h3>
+        <p>We strive for customer satisfaction. If you are not satisfied with our service, please contact us within 7 days of purchase. Refunds are reviewed on a case-by-case basis based on the nature of the service provided.</p>
+    </section>
+
     <footer>
         <div class="footer-links">
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Service</a> | 
-            <a href="#">Refund Policy</a>
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="#terms">Terms of Service</a> | 
+            <a href="#refund">Refund Policy</a>
         </div>
         <p>&copy; 2026 NT Global Hub. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Paddle Initialization
         window.addEventListener('DOMContentLoaded', (event) => {
             if (typeof Paddle !== 'undefined') {
                 Paddle.Initialize({ 
