@@ -3,23 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NT Global Hub</title>
-    <!-- 'defer' attribute add kiya hai taake script smooth load ho -->
+    <title>NT Global Hub | Official Portal</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+        header { background: #f4f4f4; padding: 20px; text-align: center; }
+        section { padding: 40px 20px; max-width: 800px; margin: auto; }
+        .hero { text-align: center; background: #fff; border: 1px solid #ddd; padding: 40px; }
+        button { padding: 15px 30px; font-size: 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        .footer-links a { color: white; margin: 0 10px; text-decoration: none; }
+    </style>
+    <!-- Proxy Script -->
     <script src="https://small-disk-e02c.ntstudio00.workers.dev/paddle-script" defer></script>
 </head>
 <body>
 
-    <div style="text-align:center; padding: 50px;">
-        <h1>Welcome to NT Global Hub</h1>
-        <button onclick="openCheckout('pri_01ksmjvxcfxha6v8avt5f47ppt')" style="padding: 15px 30px; font-size: 20px; cursor: pointer;">
-            Buy Now ($50)
-        </button>
-    </div>
+    <header>
+        <h1>NT Global Hub</h1>
+    </header>
+
+    <section class="hero">
+        <h2>Premium Digital Services</h2>
+        <p>Access our elite trading and mentorship resources.</p>
+        <button onclick="openCheckout('pri_01ksmjvxcfxha6v8avt5f47ppt')">Buy Now ($50)</button>
+    </section>
+
+    <section id="about">
+        <h3>About Us</h3>
+        <p>NT Global Hub is a professional digital agency specializing in international financial infrastructure and mentorship. We provide streamlined solutions for global traders and businesses.</p>
+    </section>
+
+    <section id="contact">
+        <h3>Contact Us</h3>
+        <p>For support or business inquiries, reach out to us at: <strong>info@ntglobalhub.com</strong></p>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Refund Policy</a>
+        </div>
+        <p>&copy; 2026 NT Global Hub. All Rights Reserved.</p>
+    </footer>
 
     <script>
         // Paddle Initialization
-        // Humne ek chota sa check add kiya hai taake agar script load hone mein 
-        // thoda time le, toh code break na ho.
         window.addEventListener('DOMContentLoaded', (event) => {
             if (typeof Paddle !== 'undefined') {
                 Paddle.Initialize({ 
@@ -35,8 +64,7 @@
                     items: [{ priceId: priceId, quantity: 1 }]
                 });
             } else {
-                alert("Paddle abhi load ho raha hai, zara ruk ke try karein.");
-                console.error("Paddle is undefined.");
+                alert("Payment gateway is loading, please wait...");
             }
         }
     </script>
